@@ -3,4 +3,4 @@
 # Stack generates the Cabal file from `package.yaml` through hpack.
 /*.cabal
 stack.yaml.lock
-library/Year2015/Day1/input.txt
+library/Year*/Day*/input.txt
