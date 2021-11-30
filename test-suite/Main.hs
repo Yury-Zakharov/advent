@@ -9,6 +9,7 @@ import Common (everyFirst, everySecond)
 import qualified Test.Tasty
 import Test.Tasty.Hspec
 import qualified Year2015.Day3.Solution as Y2015D3
+import qualified Year2015.Day4.Solution as Y2015D4
 
 main :: IO ()
 main = do
@@ -28,3 +29,6 @@ spec = parallel $ do
     Y2015D3.part2 "^v" `shouldBe` 3
     Y2015D3.part2 "^>v<" `shouldBe` 3
     Y2015D3.part2 "^v^v^v^v^v" `shouldBe` 11
+  it "Santa is mining" $ do
+    Y2015D4.part1 "abcdef" `shouldBe` 609043
+    Y2015D4.part1 "pqrstuv" `shouldBe` 1048970
