@@ -2,6 +2,7 @@ import System.Environment (getArgs)
 import System.Exit (exitSuccess)
 import qualified Year2015.Day1.Solution as Y2015D1
 import qualified Year2015.Day2.Solution as Y2015D2
+import qualified Year2015.Day3.Solution as Y2015D3
 
 main :: IO ()
 main = getArgs >>= parse >>= resolve
@@ -15,6 +16,8 @@ resolve (year, day) = do
         Y2015D1.solve content
       "2" -> do
         Y2015D2.solve content
+      "3" -> do
+        Y2015D3.solve content
       _ -> print "dunno yet"
     _ -> print "NIY"
 
