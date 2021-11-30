@@ -24,6 +24,8 @@ library:
   dependencies:
   - base
   - containers
+  - pureMD5
+  - bytestring
   source-dirs: library
 
 executables:

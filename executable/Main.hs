@@ -3,6 +3,7 @@ import System.Exit (exitSuccess)
 import qualified Year2015.Day1.Solution as Y2015D1
 import qualified Year2015.Day2.Solution as Y2015D2
 import qualified Year2015.Day3.Solution as Y2015D3
+import qualified Year2015.Day4.Solution as Y2015D4
 
 main :: IO ()
 main = getArgs >>= parse >>= resolve
@@ -12,12 +13,10 @@ resolve (year, day) = do
   content <- loadInput year day
   case year of
     "2015" -> case day of
-      "1" -> do
-        Y2015D1.solve content
-      "2" -> do
-        Y2015D2.solve content
-      "3" -> do
-        Y2015D3.solve content
+      "1" -> Y2015D1.solve content
+      "2" -> Y2015D2.solve content
+      "3" -> Y2015D3.solve content
+      "4" -> Y2015D4.solve content
       _ -> print "dunno yet"
     _ -> print "NIY"
 
