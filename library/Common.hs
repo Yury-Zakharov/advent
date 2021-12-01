@@ -1,4 +1,6 @@
 module Common where
+import Control.Applicative
+import Data.List (tails)
 
 toInt :: String -> Int
 toInt = read
@@ -26,3 +28,9 @@ everyFirst (x : xs) = x : everySecond xs
 everySecond :: [a] -> [a]
 everySecond [] = []
 everySecond (_ : xs) = everyFirst xs
+
+transpose' :: [[a]] -> [[a]]
+transpose' = getZipList . traverse ZipList
+
+windows :: Int -> [a] -> [[a]]
+windows m = transpose' . take m . tails
