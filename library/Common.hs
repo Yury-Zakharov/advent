@@ -1,6 +1,6 @@
 module Common where
 import Control.Applicative
-import Data.List (tails)
+import Data.List
 
 toInt :: String -> Int
 toInt = read
@@ -34,3 +34,5 @@ transpose' = getZipList . traverse ZipList
 
 windows :: Int -> [a] -> [[a]]
 windows m = transpose' . take m . tails
+findString :: (Eq a) => [a] -> [a] -> Maybe Int
+findString needle haystack = findIndex (isPrefixOf needle) (tails haystack)
