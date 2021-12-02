@@ -6,6 +6,7 @@ import qualified Year2015.Day3.Solution as Y2015D3
 import qualified Year2015.Day4.Solution as Y2015D4
 import qualified Year2021.Day1.Solution as Y2021D1
 import qualified Year2015.Day5.Solution as Y2015D5
+import qualified Year2021.Day2.Solution as Y2021D2
 
 main :: IO ()
 main = getArgs >>= parse >>= resolve
@@ -23,6 +24,7 @@ resolve (year, day) = do
       _ -> print "dunno yet"
     "2021" -> case day of
       "1" -> Y2021D1.solve content
+      "2" -> Y2021D2.solve content
       _ -> print "dunno yet"
     _ -> print "NIY"
 
