@@ -10,6 +10,8 @@ import qualified Test.Tasty
 import Test.Tasty.Hspec
 import qualified Year2015.Day3.Solution as Y2015D3
 -- import qualified Year2015.Day4.Solution as Y2015D4
+
+import qualified Year2015.Day5.Solution as Y2015D5
 import qualified Year2021.Day1.Solution as Y2021D1
 
 main :: IO ()
@@ -36,6 +38,24 @@ spec = parallel $ do
   it "we all live in the.." $ do
     Y2021D1.part1 measurements `shouldBe` 7
     Y2021D1.part2 measurements `shouldBe` 5
+  it "String primitives" $ do
+    Y2015D5.hasDups "ugknbfddgicrmopn" `shouldBe` True
+    Y2015D5.hasDups "ugknbfdadgicrmopn" `shouldBe` False
+    Y2015D5.threeWowels "ugknbfddgicrmopn" `shouldBe` True
+    Y2015D5.threeWowels "acdegjhijklmno" `shouldBe` True
+  it "Nice strings" $ do
+    Y2015D5.isNice "ugknbfddgicrmopn" `shouldBe` True
+    Y2015D5.isNice "aaa" `shouldBe` True
+    Y2015D5.isNice "jchzalrnumimnmhp" `shouldBe` False
+    Y2015D5.isNice "haegwjzuvuyypxyu" `shouldBe` False
+    Y2015D5.isNice "dvszwmarrgswjxmb" `shouldBe` False
+  it "Nice strings too" $ do
+    Y2015D5.part2 "qjhvhtzxzqqjkmpb" `shouldBe` 1
+    Y2015D5.part2 "xxyxx" `shouldBe` 1
+    Y2015D5.part2 "uurcxstgmygtbstg" `shouldBe` 0
+    Y2015D5.part2 "ieodomkazucvgmuy" `shouldBe` 0
+    Y2015D5.hasDoublePair "qjhvhtzxzqqjkmpb" `shouldBe` True
+    Y2015D5.hasDoublePair "aaaa" `shouldBe` True
 
 measurements :: String
 measurements = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263\n"
