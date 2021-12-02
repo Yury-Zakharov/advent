@@ -1,4 +1,5 @@
 module Common where
+
 import Control.Applicative
 import Data.List
 
@@ -34,5 +35,9 @@ transpose' = getZipList . traverse ZipList
 
 windows :: Int -> [a] -> [[a]]
 windows m = transpose' . take m . tails
-findString :: (Eq a) => [a] -> [a] -> Maybe Int
-findString needle haystack = findIndex (isPrefixOf needle) (tails haystack)
+
+group' :: Int -> [a] -> [[a]]
+group' _ [] = []
+group' n l
+  | n > 0 = take n l : group' n (drop n l)
+  | otherwise = error "Negative or zero n"
